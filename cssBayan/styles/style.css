@@ -98,7 +98,14 @@ body {
         width: 90%;
     }
 }
-
+@media (max-width: 550px) {
+    body {
+        font-size: .6em;
+    }
+    .wrapper {
+        width: 95%;
+    }
+}
 
 @media (hover: hover) and (pointer: fine) {
     .btn {
