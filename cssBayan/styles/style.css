@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Prompt:wght@700&display=swap");
+
+html {
+  scroll-behavior: smooth;
+}
+* {
+  margin: 0;
+  padding: 0;
+  position: static;
+}
+body {
+  width: 80vw;
+  margin: auto;
+  font-family: Prompt;
+  font-size: 1em;
+  font-weight: 700;
+  background-color: #f1f1f1;
+  overflow-x: hidden;
+}
+.wrapper {
+  width: 80%;
+  height: 100%;
+  margin: auto;
+}
+.title {
+  margin: .5em;
+  width: 100%;
+}
+.accordion {
+  color: blue;
+  cursor: pointer;
+  height: 100%;
+  margin: .2em;
+}
+.block {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+.input {
+  width: 0;
+  height: 0;
+  appearance: none;
+}
+.label {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.label:active {
+  color: blue !important;
+  opacity: 0.7;
+}
+
+.label:active svg path {
+  fill: #0000ff;
+  opacity: 0.7;
+}
+.line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: .2em;
+  border-top: 0.2em solid grey;
+}
+.input:checked ~ .label {
+  color: #000;
+}
+.btn {
+  scale: 1;
+  width: 1.5em;
+  height: 1.5em;
+  transition: 0.35s;
+}
+
+.input:checked + .label .btn {
+  transform: rotate(90deg);
+}
+.meme {
+  margin: .5em auto;
+  scale: 0;
+  height: 0;
+  transition: 0.5s;
+}
+.input:checked + .label .meme {
+  display: flex;
+  scale: 100%;
+  height: 20em;
+  transition: 0.5s;
+}
+
+@media (max-width: 900px) {
+    body {
+        font-size: .8em;
+    }
+    .wrapper {
+        width: 90%;
+    }
+}
+@media (max-width: 550px) {
+    body {
+        font-size: .6em;
+    }
+    .wrapper {
+        width: 95%;
+    }
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .btn {
+        scale: 0;
+      }
+    label:hover {
+        color: #000;
+      }
+      .wrapper:hover .btn {
+        scale: 1;
+      }
+      .block:hover .label .btn {
+        scale: 1;
+        transform: rotate(90deg);
+        transition: 0.35s;
+      }
+      .accordion:hover {
+        color: #000;
+      }
+      .input:hover + .label .meme {
+        display: flex;
+        scale: 100%;
+        height: 20em;
+        transition: 0.5s;
+      }
+  }
